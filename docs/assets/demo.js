@@ -178,6 +178,13 @@
         '<div class="ig-bar-track"><i style="width:' + fill + '%"></i></div></div>';
     });
     els.cards.innerHTML = shown ? html : '<p class="ig-empty">No goods allocated or stored.</p>';
+    fitCards();
+  }
+  // As in the mod: the cards stay above the scrolling list, and show two at most; more scroll inside.
+  function fitCards() {
+    var cards = els.cards.children, height = 0;
+    for (var i = 0; i < cards.length && i < 2; i++) height += cards[i].offsetHeight + (parseFloat(getComputedStyle(cards[i]).marginBottom) || 0);
+    els.cards.style.maxHeight = cards.length > 2 ? height + 'px' : '';
   }
 
   // ---- actions ----
@@ -209,6 +216,8 @@
     });
     els.scroll.scrollTop = 0;
   }
+
+  window.addEventListener('resize', fitCards);
 
   els.rows.addEventListener('click', function (e) {
     var btn = e.target.closest('button');

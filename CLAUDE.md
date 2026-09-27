@@ -7,7 +7,7 @@ through a PR → merge.
 
 - CI (`.github/workflows/tests.yml`, every PR) runs, and you can run locally without the game:
   `dotnet run --project tests/AllocationTests.csproj -c Release` (prints `PASS: 19,138 assertions…`),
-  `node tests/test-site.mjs` (76/76), and `powershell -NoProfile -Command ".\tests\check-version.ps1"` (prints `1.2.0`).
+  `node tests/test-site.mjs` (76/76), and `powershell -NoProfile -Command ".\tests\check-version.ps1"` (prints `1.2.1`).
 - The full mod build needs the game and DLLs: `.\build.ps1 -HarmonyPath <0Harmony.dll> -BeaverBuddiesPath <BeaverBuddies.dll>`
   (see `DEVELOPMENT.md`). The version lives only in `Directory.Build.props` plus
   `packaging/MixedStorage/version-1.1/manifest.json`; a release bump also touches README, CHANGELOG.md and the site's
@@ -127,8 +127,8 @@ When asked to "update the website for the latest release, consistent with the de
    `gh release view <tag> -R timbermods/MixedStorage`, README, CHANGELOG.md, `DEVELOPMENT.md`. List every
    player-facing change.
 2. Update every place the site states a changed fact:
-   - `release.js` fills `data-release="tag"` (fallback text `v1.2.0`), `data-release="asset-name"` (fallback
-     `MixedStorage-v1.2.0.zip`), `data-release-href="download"|"notes"` (fallback `…/releases/latest` or
+   - `release.js` fills `data-release="tag"` (fallback text `v1.2.1`), `data-release="asset-name"` (fallback
+     `MixedStorage-v1.2.1.zip`), `data-release-href="download"|"notes"` (fallback `…/releases/latest` or
      `…/releases`) and the `data-release-show` pills. The tag and zip-name fallbacks are updated automatically when a
      release is marked Latest (`.github/workflows/latest-release.yml`); the site test checks that the install guide
      keeps the zip name it was written with. Pre-releases change nothing.

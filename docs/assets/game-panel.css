@@ -72,13 +72,14 @@
 /* the mod's panel */
 .ig-alloc { padding: 10px 4px 9px 11px; }
 .ig-title { margin: 0 0 3px; font-size: 16px; font-weight: 700; text-transform: uppercase; color: #fff; letter-spacing: 0; }
-.ig-scroll { max-height: 380px; overflow-y: auto; overflow-x: hidden; padding-right: 4px; scrollbar-gutter: stable; }
-.ig-scroll:focus-visible { outline: 3px solid var(--ig-orange); outline-offset: 2px; }
-.ig-scroll::-webkit-scrollbar { width: 16px; }
-.ig-scroll::-webkit-scrollbar-track { background: linear-gradient(90deg, transparent 4px, #214545 4px, #214545 12px, transparent 12px); border-radius: 6px; }
-.ig-scroll::-webkit-scrollbar-thumb { background: #47f7e8; border: 2px solid #f5e8a0; border-radius: 4px; min-height: 44px; box-shadow: inset 0 0 0 1px #2b6a63; }
-.ig-scroll::-webkit-scrollbar-thumb:hover { background: #7bfff2; }
-@-moz-document url-prefix() { .ig-scroll { scrollbar-color: #47f7e8 #214545; scrollbar-width: auto; } }
+.ig-scroll { max-height: 300px; overflow-y: auto; overflow-x: hidden; padding-right: 4px; scrollbar-gutter: stable; }
+.ig-scroll:focus-visible, .ig-cards--pinned:focus-visible { outline: 3px solid var(--ig-orange); outline-offset: 2px; }
+.ig-cards--pinned { overflow-y: auto; overflow-x: hidden; padding-right: 4px; }
+.ig-scroll::-webkit-scrollbar, .ig-cards--pinned::-webkit-scrollbar { width: 16px; }
+.ig-scroll::-webkit-scrollbar-track, .ig-cards--pinned::-webkit-scrollbar-track { background: linear-gradient(90deg, transparent 4px, #214545 4px, #214545 12px, transparent 12px); border-radius: 6px; }
+.ig-scroll::-webkit-scrollbar-thumb, .ig-cards--pinned::-webkit-scrollbar-thumb { background: #47f7e8; border: 2px solid #f5e8a0; border-radius: 4px; min-height: 44px; box-shadow: inset 0 0 0 1px #2b6a63; }
+.ig-scroll::-webkit-scrollbar-thumb:hover, .ig-cards--pinned::-webkit-scrollbar-thumb:hover { background: #7bfff2; }
+@-moz-document url-prefix() { .ig-scroll, .ig-cards--pinned { scrollbar-color: #47f7e8 #214545; scrollbar-width: auto; } }
 .ig-summary { font-size: 16px; font-weight: 700; color: #fff; }
 
 /* summary cards */
