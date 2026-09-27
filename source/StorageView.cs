@@ -108,11 +108,21 @@ namespace MixedStorage
             _summary.style.unityFontStyleAndWeight = FontStyle.Bold;
             _summary.style.whiteSpace = WhiteSpace.Normal;
             _panel.Add(_summary);
+            // The summary and the goods cards stay pinned above the scrolling goods list, showing up to two cards;
+            // any more scroll inside the card list.
+            _summary.style.flexShrink = 0;
             _contentsSummary = new ScrollView(ScrollViewMode.Vertical);
-            _contentsSummary.style.flexShrink = 0;
+            _contentsSummary.AddToClassList("scroll--green-decorated");
+            new ScrollBarInitializationService().InitializeVisualElement(_contentsSummary);
+            _contentsSummary.style.flexShrink = 1;
+            _contentsSummary.style.minHeight = 0;
             _contentsSummary.horizontalScrollerVisibility = ScrollerVisibility.Hidden;
-            _contentsSummary.verticalScrollerVisibility = ScrollerVisibility.Hidden;
+            _contentsSummary.verticalScrollerVisibility = ScrollerVisibility.Auto;
             CompactScroll(_contentsSummary);
+            _contentsSummary.verticalScroller.style.width = 20;
+            _contentsSummary.verticalScroller.style.minWidth = 20;
+            _contentsSummary.verticalScroller.style.marginLeft = 4;
+            _contentsSummary.contentContainer.RegisterCallback<GeometryChangedEvent>(_ => FitSummaryCards());
             _contentsSummary.style.marginTop = 4;
             _contentsSummary.style.marginBottom = 4;
             _contentsSummary.tooltip = "Applied allocation percentage and current stored quantity / item limit. Includes incoming and excess goods, regardless of search or filters.";
@@ -196,8 +206,8 @@ namespace MixedStorage
             _apply.style.marginRight = 0;
             actions.Add(_apply);
             _panel.Add(actions);
-            // Keep clipboard controls, the total and Apply outside the scrolling content. The game window
-            // includes other fragments above us, so budget from this fragment's actual top.
+            // Keep the summary, its cards, clipboard controls, the total and Apply outside the scrolling content.
+            // The game window includes other fragments above us, so budget from this fragment's actual top.
             _body = new ScrollView(ScrollViewMode.Vertical);
             _body.AddToClassList("scroll--green-decorated");
             new ScrollBarInitializationService().InitializeVisualElement(_body);
@@ -211,8 +221,8 @@ namespace MixedStorage
             _body.verticalScroller.style.minWidth = 20;
             _body.verticalScroller.style.marginLeft = 4;
             foreach (var child in _panel.Children().ToArray())
-                if (child != title && child != clipboardActions && child != _total && child != actions) _body.Add(child);
-            _panel.Insert(1, _body);
+                if (child != title && child != _summary && child != _contentsSummary && child != clipboardActions && child != _total && child != actions) _body.Add(child);
+            _panel.Insert(_panel.IndexOf(_contentsSummary) + 1, _body);
             title.style.flexShrink = clipboardActions.style.flexShrink = _total.style.flexShrink = actions.style.flexShrink = 0;
             _total.style.whiteSpace = WhiteSpace.Normal;
             _total.style.borderTopWidth = 1;
@@ -551,6 +561,24 @@ namespace MixedStorage
                 below += last - edge;
             }
             return below;
+        }
+
+        // Cap the pinned card list at the height of its first two shown cards.
+        private void FitSummaryCards()
+        {
+            float height = 0;
+            int shown = 0;
+            foreach (var card in _contentsSummary.contentContainer.Children())
+            {
+                var style = card.resolvedStyle;
+                if (style.display == DisplayStyle.None || float.IsNaN(card.layout.height)) continue;
+                height += card.layout.height + style.marginTop + style.marginBottom;
+                if (++shown == 2) break;
+            }
+            if (shown == 0) return;
+            var current = _contentsSummary.style.maxHeight;
+            if (current.keyword == StyleKeyword.Undefined && Mathf.Abs(current.value.value - height) <= 1) return;
+            _contentsSummary.style.maxHeight = height;
         }
 
         private void RestorePanelWidth()

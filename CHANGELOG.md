@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.1
+
+The storage panel keeps what's stored in view. Saves and co-op work with v1.2.0; co-op players should still update together.
+
+- The summary line and the goods cards now stay at the top of the Storage Allocation panel while you scroll the goods list. The cards show two goods at a time; with more goods allocated or stored, scroll the cards themselves.
+
 ## v1.2.0
 
 Two panel improvements. **All co-op players must update together**: earlier versions refuse an Apply that stores nothing. Saves load both ways with v1.1.x.

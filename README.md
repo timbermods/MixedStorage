@@ -4,9 +4,9 @@
 
 Give each good a percentage of the building's capacity. At **50% carrots** and **50% gears**, a 1,200-capacity warehouse holds 600 of each. Percentages reserve space; they don't create goods or fill the building.
 
-**[Download MixedStorage v1.2.0](https://github.com/timbermods/MixedStorage/releases/download/v1.2.0/MixedStorage-v1.2.0.zip)** · [Release notes](https://github.com/timbermods/MixedStorage/releases/tag/v1.2.0) · [Report a problem](https://github.com/timbermods/MixedStorage/issues) · [Website](https://timbermods.github.io/MixedStorage/) <!-- latest -->
+**[Download MixedStorage v1.2.1](https://github.com/timbermods/MixedStorage/releases/download/v1.2.1/MixedStorage-v1.2.1.zip)** · [Release notes](https://github.com/timbermods/MixedStorage/releases/tag/v1.2.1) · [Report a problem](https://github.com/timbermods/MixedStorage/issues) · [Website](https://timbermods.github.io/MixedStorage/) <!-- latest -->
 
-> **v1.2.0** is the current release, built for Timberborn **1.1.2.4**. One download covers single-player and BeaverBuddies multiplayer. <!-- latest -->
+> **v1.2.1** is the current release, built for Timberborn **1.1.2.4**. One download covers single-player and BeaverBuddies multiplayer. <!-- latest -->
 
 <img width="625" height="1112" alt="image" src="https://github.com/user-attachments/assets/862e5c13-33a0-47ed-9515-9e2dffefe3a9" />
 
@@ -15,13 +15,13 @@ Give each good a percentage of the building's capacity. At **50% carrots** and *
 ## What you can do
 
 - **Mix goods:** give a percentage to any good the building normally accepts.
-- **See your stock at a glance:** summary cards show each good's stock, limit, share and fill bar.
+- **See your stock at a glance:** summary cards show each good's stock, limit, share and fill bar, and stay in view while you scroll the goods list.
 - **Set up quickly:** search the list, give one good everything with **Max**, or copy a split to another building.
 - **See the mix in the world:** the building shows its goods with the game's own models.
 
 ## Install
 
-1. Download **MixedStorage-v1.2.0.zip** above. On the release page, choose that file under **Assets**, not **Source code**. <!-- latest -->
+1. Download **MixedStorage-v1.2.1.zip** above. On the release page, choose that file under **Assets**, not **Source code**. <!-- latest -->
 2. Close Timberborn. Extract the ZIP's **MixedStorage** folder into `Documents\Timberborn\Mods`.
 3. Check that `Documents\Timberborn\Mods\MixedStorage\version-1.1\manifest.json` exists, with no extra folder in between.
 4. Install **Harmony** 2.4.1 or newer from the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3284904751) if you don't have it.
@@ -111,7 +111,7 @@ Close Timberborn, then disable MixedStorage or delete its folder. In saves that 
 
 ## Compatibility and testing
 
-The panel's layout and the storage visuals have been checked in game, and players have reported using the mod. The newer behavior passes automated checks but hasn't been played yet, alone or in co-op. That includes the game's Copy settings tool, storing nothing, the orange ring on Apply, Supply mode, loading damaged saves and the panel's messages.
+The panel's layout and the storage visuals have been checked in game, and players have reported using the mod. The newer behavior passes automated checks but hasn't been played yet, alone or in co-op. That includes the game's Copy settings tool, storing nothing, the orange ring on Apply, the cards staying in view, Supply mode, loading damaged saves and the panel's messages.
 
 See the [changelog](CHANGELOG.md) for version history and the [developer notes](DEVELOPMENT.md) for building and how the mod works.
 

@@ -151,7 +151,7 @@
           <figcaption>The mix in the world. The split is approximate and banners show one good; the panel has the exact counts.</figcaption>
         </figure>
         <ul class="ledger" style="margin-top:28px;grid-template-columns:minmax(0,1fr)">
-          <li><b>Stock at a glance</b><p>Summary cards show each good's stock, limit, share and fill bar, with incoming deliveries and excess.</p></li>
+          <li><b>Stock at a glance</b><p>Summary cards show each good's stock, limit, share and fill bar, with incoming deliveries and excess. They stay in view while you scroll the goods list.</p></li>
           <li><b>Quick setup</b><p>Search the list, show only allocated goods, give one good everything with Max, or copy a split to another building. The game's Copy settings tool copies it too.</p></li>
           <li><b>Drafts until you Apply</b><p>Edits change nothing until you press Apply. Apply has an orange ring while it would change the building.</p></li>
           <li><b>Fits your screen</b><p>The editor is sized to your window and leaves room for the game's Construction site panel.</p></li>
@@ -223,9 +223,9 @@
 
           <section class="ig-sec ig-alloc" aria-label="Storage Allocation">
             <h3 class="ig-title">Storage Allocation</h3>
+            <p class="ig-summary" data-summary></p>
+            <div class="ig-cards ig-cards--pinned" data-cards tabindex="0" role="region" aria-label="Allocated goods"></div>
             <div class="ig-scroll" data-scroll tabindex="0" role="region" aria-label="Storage allocation settings, scrollable">
-              <p class="ig-summary" data-summary></p>
-              <div class="ig-cards" data-cards></div>
               <div class="ig-search">
                 <label for="ig-search">Search</label>
                 <input id="ig-search" class="ig-input" type="text" autocomplete="off" spellcheck="false" data-search title="Search the goods allowed in this storage building.">
@@ -297,7 +297,7 @@
   <div class="wrap">
     <div class="panel note note--info measure">
       <h3>What's been played</h3>
-      <p>The panel's layout and the storage visuals have been checked in game, and players have reported using the mod. The newer behavior passes automated checks but hasn't been played yet, alone or in co-op. That includes the game's Copy settings tool, storing nothing, the orange ring on Apply, Supply mode, loading damaged saves and the panel's messages.</p>
+      <p>The panel's layout and the storage visuals have been checked in game, and players have reported using the mod. The newer behavior passes automated checks but hasn't been played yet, alone or in co-op. That includes the game's Copy settings tool, storing nothing, the orange ring on Apply, the cards staying in view, Supply mode, loading damaged saves and the panel's messages.</p>
       <p>Found something odd? <a href="troubleshooting.html">Check the troubleshooting guide</a> or <a href="https://github.com/timbermods/MixedStorage/issues" rel="noopener">open an issue</a>.</p>
     </div>
   </div>

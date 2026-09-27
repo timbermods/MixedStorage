@@ -34,12 +34,12 @@ models. One download covers single player and co-op.
 
 ## Operating Context
 
-- Current release: **v1.2.0** (a stable Latest release; `release.js` fills the version and zip link). Built for
+- Current release: **v1.2.1** (a stable Latest release; `release.js` fills the version and zip link). Built for
   Timberborn **1.1.2.4**. Requires **Harmony 2.4.1** or newer. Optional co-op through the **BeaverBuddies Stability
   Fork** (support is bundled; every player needs the same MixedStorage and game version).
 - Supported: Folktails small/medium/large warehouses and small/large/underground piles; Iron Teeth small/medium/large
   warehouses and small/large industrial piles. Not tanks or map-editor reserve storage.
-- The panel: Storage Allocation in the building's window; summary cards; Search; Allocated goods only; Max; x
+- The panel: Storage Allocation in the building's window; summary cards (pinned above the goods list, two at a time); Search; Allocated goods only; Max; x
   (reset); Clear all; Revert; Copy / Paste allocations; Apply 100% (Apply: store nothing at 0%). Edits are drafts
   until Apply; Apply gets an orange ring while the draft differs. The game's Copy settings tool copies allocations.
 - Reporting: GitHub issues with Player.log (`%USERPROFILE%\AppData\LocalLow\Mechanistry\Timberborn`), versions, other
@@ -59,7 +59,8 @@ models. One download covers single player and co-op.
 - Terminology as in game and README: Storage Allocation, Apply 100%, Apply: store nothing, Copy allocations, Paste
   allocations, Clear all, Revert, Max, Allocated goods only, excess, Accept / Obtain / Supply / Empty.
 - **Honest status:** the v0.5.8 panel layout and v0.5.7 storage visuals were verified in game; later changes (Copy
-  settings, error messages, Supply order, store nothing, the Apply ring, and more) haven't been played in game yet.
+  settings, error messages, Supply order, store nothing, the Apply ring, the pinned cards,
+  and more) haven't been played in game yet.
   Say so plainly. Describe the mod as it is now; version history belongs in the changelog. Keep the upgrade facts
   players need (replace the files with the game closed; allocations are kept; remove the old MixedStorage-BeaverBuddies
   addon if present).
